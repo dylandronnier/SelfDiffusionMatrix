@@ -57,10 +57,10 @@ parser.add_argument("--processes",
 args = parser.parse_args()
 
 d = 2                    # Dimension
-nb_sim = round(3e2)      # 
+nb_sim = round(3e2)      # Number of paths in the MC simulation
 L = 16                   # Size of the box
 alpha = 0.5              # Density of particles
-nb_steps = round(5e4)    # 
+nb_steps = round(5e4)    # Number of steps
 
 
 def simul():
