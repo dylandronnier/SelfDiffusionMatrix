@@ -28,9 +28,9 @@ parser = argparse.ArgumentParser(
 
 parser.add_argument("Density",
                     type=float,
-                    help="The density of particles at which the self-diffusion coefficient is computed")
+                    help="Density of particles at which the self-diffusion coefficient is computed")
 
-parser.add_argument("Sim",
+parser.add_argument("Simulations",
                     type=int,
                     help="Number of draws. Advice: >100",
                     default=round(3e2))
@@ -56,11 +56,11 @@ parser.add_argument("--processes",
 
 args = parser.parse_args()
 
-d = 2                    # Dimension
-nb_sim = round(3e2)      # Number of paths in the MC simulation
-L = 16                   # Size of the box
-alpha = 0.5              # Density of particles
-nb_steps = round(5e4)    # Number of steps
+d = args.dimension           # Dimension
+nb_sim = args.Simulations    # Number of paths in the MC simulation
+L = args.size                # Size of the box
+alpha = args.Density         # Density of particles
+nb_steps = round(5e4)        # Number of steps
 
 
 def simul():
